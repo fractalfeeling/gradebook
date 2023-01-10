@@ -4,11 +4,12 @@ namespace GradeBook
     {
         public Book(string name)
         {
+            category = "";
             grades = new List<double>();
             Name = name;
         }
 
-        public void AddLetterGrade(char letter)
+        public void AddGrade(char letter)
         {
             switch (letter)
             {
@@ -77,5 +78,6 @@ namespace GradeBook
 
        private List<double> grades;
        public string Name;
+       readonly string category = "Finance";
     }
 }
