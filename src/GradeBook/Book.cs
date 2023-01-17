@@ -1,8 +1,27 @@
 namespace GradeBook
 {
-    public class Book
+    public class NamedObject
     {
-        public Book(string name)
+
+        public NamedObject(string name)
+        {
+            Name = name;
+        }
+
+        public string Name
+        {
+            get; set;
+        }
+    }
+
+    public interface IBook
+    {
+        
+    }
+
+    public class Book : NamedObject
+    {
+        public Book(string name) : base("")
         {
             grades = new List<double>();
             Name = name;
@@ -76,12 +95,6 @@ namespace GradeBook
         }
 
        private List<double> grades;
-
-       public string Name 
-       {
-            get; 
-            private set;
-       }
 
        public const string CATEGORY = "Finance";
     }
